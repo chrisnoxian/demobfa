@@ -19,6 +19,15 @@ platform.ready().then(() => {
       let browser = this.iab.create('https://www.tutorialspoint.com/ionic/ionic_pdf_version.htm','_blank',{zoom:'yes',location:'no'});
    
       browser.show();
+  
+       browser.on('loadstart').subscribe(
+      (data) => {
+       console.log("URL IS",data.url);
+       this.downloadfile(data.url)
+      },
+      err => {
+        console.log("InAppBrowser Loadstop Event Error: " + err);
+});
     });
 
   }
