@@ -9,18 +9,17 @@ import { Diagnostic } from '@ionic-native/diagnostic';
 
  declare var cordova: any;
 @Component({
- template : "<img src='assets/imgs/logo.png'/>"
+ template : "<p>...press back button to exit</p>"
 })
 export class HomePage {
 
   constructor(public navCtrl: NavController, private iab: InAppBrowser, public platform: Platform, private fileOpener: FileOpener, private transfer: FileTransfer, private file: File, private diagnostic: Diagnostic) {
 platform.ready().then(() => {
      
-      let browser = this.iab.create('https://www.tutorialspoint.com/ionic/ionic_pdf_version.htm','_blank',{zoom:'yes',location:'no'});
+      let browser = this.iab.create('http://study.bfa.org/','_blank',{zoom:'yes',location:'no'});
    
       browser.show();
-  
-       browser.on('loadstart').subscribe(
+      browser.on('loadstart').subscribe(
       (data) => {
        console.log("URL IS",data.url);
        this.downloadfile(data.url)
@@ -29,9 +28,8 @@ platform.ready().then(() => {
         console.log("InAppBrowser Loadstop Event Error: " + err);
 });
     });
-
-  }
-  downloadfile(url)
+    }
+downloadfile(url)
   {
     console.log("INSIDE DOWNLOAD FILE", url);
 
@@ -55,5 +53,8 @@ platform.ready().then(() => {
           console.log("EXTERNAL STORAGE HAS NO PERMISSIon")
         })
       }
-}
-}
+  }
+ 
+} 
+
+                                                                                  

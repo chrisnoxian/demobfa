@@ -10,6 +10,7 @@ import { FileOpener } from '@ionic-native/file-opener';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
 import { Diagnostic } from '@ionic-native/diagnostic';
+import { Network } from '@ionic-native/network';
 
 
 declare var cordova: any;
@@ -35,6 +36,8 @@ declare var cordova: any;
     FileTransfer,
     File,
     Diagnostic,
+    
+
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
