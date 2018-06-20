@@ -14,6 +14,7 @@ export class MyApp {
   public counter=0;
   
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,public toastCtrl: ToastController) {
+  
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();

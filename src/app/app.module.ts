@@ -12,8 +12,6 @@ import { File } from '@ionic-native/file';
 import { Diagnostic } from '@ionic-native/diagnostic';
 import { Network } from '@ionic-native/network';
 
-
-declare var cordova: any;
 @NgModule({
   declarations: [
     MyApp,
@@ -29,15 +27,13 @@ declare var cordova: any;
     HomePage
   ],
   providers: [
-    StatusBar,
+     StatusBar,
     SplashScreen,
     InAppBrowser,
     FileOpener,
     FileTransfer,
     File,
     Diagnostic,
-    
-
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
